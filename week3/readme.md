@@ -3,3 +3,7 @@
 # THM Broken Access Control
 ![image](https://github.com/user-attachments/assets/d7094e00-0dcb-46e1-adb0-0cc86beb6155)
 
+# the main idea of portswigger labs
+## Lab: Username enumeration via different responses
+brute force until we find difrrend response code
+
