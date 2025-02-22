@@ -9,3 +9,5 @@
 brute force username until we find different response code then to do with password again
 ## Lab: 2FA simple bypass
 brute force username until we find different error code then brute force again with passwords to find different response code
+## Lab: Username enumeration via response timing
+brute force username with changeing X-Forwarded-For header until we find different response length or response timing then brute force again with passwords 
