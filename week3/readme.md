@@ -16,3 +16,14 @@ brute force user names but after 2 req send 1 correct req to don't get blocked
 ## Lab: Username enumeration via account lock
 brute force usernames many times untill we find that he blooks us when the usenname is correct and the username is not then bruteforce
 the passwords bruteforce all passwords but the aite has a logical error when the password was correct the response came back less than every time
+## Lab: 2FA simple bypass
+skip entering 2FA code and go to my-account page 
+## Lab: 2FA broken logic
+we need to change (verify) parameter to carlos user to make the site send carlos 2FA code then bruteforce the mfa code
+## Brute-forcing a stay-logged-in cookie
+the site recognize the user from stay-logged-in parameter 
+  the prameter format is base64(username:md5(hash))
+## Lab: Password reset broken logic
+this lab is vuln at forget-password function which the function compare the forget password token to work which we can change it to any thing and change the username
+
+  
