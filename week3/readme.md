@@ -1,6 +1,9 @@
 # THM labs
+## Enumeration & Brute Force
 ![image](https://github.com/user-attachments/assets/684bdbfc-4609-4428-9813-7ab9bda67683)
-![image](https://github.com/user-attachments/assets/d7094e00-0dcb-46e1-adb0-0cc86beb6155)
+## OWASP Broken Access Control
+
+![image](https://github.com/user-attachments/assets/e7523b7e-cfc2-45f0-a35c-88337cd87250)
 
 # portswigger access control labs
 ![access control](https://github.com/user-attachments/assets/efc3d333-726d-4de3-b8c2-b17a119ed8fb)
