@@ -25,5 +25,5 @@ the site recognize the user from stay-logged-in parameter
   the prameter format is base64(username:md5(hash))
 ## Lab: Password reset broken logic
 this lab is vuln at forget-password function which the function compare the forget password token to work which we can change it to any thing and change the username
-
+## Lab: Password reset poisoning via middleware
   
