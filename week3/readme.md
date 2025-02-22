@@ -20,7 +20,7 @@ the passwords bruteforce all passwords but the aite has a logical error when the
 skip entering 2FA code and go to my-account page 
 ## Lab: 2FA broken logic
 we need to change (verify) parameter to carlos user to make the site send carlos 2FA code then bruteforce the mfa code
-## Brute-forcing a stay-logged-in cookie
+## Lab: Brute-forcing a stay-logged-in cookie
 the site recognize the user from stay-logged-in parameter 
   the prameter format is base64(username:md5(hash))
 ## Lab: Password reset broken logic
