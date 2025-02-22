@@ -31,7 +31,7 @@ the site recognize the user from stay-logged-in parameter
 ## Lab: Password reset broken logic
 this lab is vuln at forget-password function which the function compare the forget password token to work which we can change it to any thing and change the username
 ## Lab: Password reset poisoning via middleware
-
+in this lab we need victim token to use it in forget password req which we can add X-Forwarded-Host header with our sever to steal his token 
 ## Lab: Password brute-force via password change
 the change password function is vuln which we can brute force it and change username parameter to carlos until we found the error code don't tell us that password is not correct like we can put confirmation pasword wrong to wait to get the massage say the confirmation password is worng not the current password
 ## Lab: Broken brute-force protection, multiple credentials per request
