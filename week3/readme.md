@@ -70,8 +70,34 @@ Visit https://partners.shopify.com/[ID]/managed_stores, add the store, and you n
 
 ## report #1861487
 this vuln is in admin approval for jop requests which the user after offering a job the admin need to approve it we can change the statusr to active which we can scam many offers
+
+
+## report #172545
+this shop site every user can add products 
+vulnerability is in endpoint we can  call list or product we don't have by id parameter 
+1. Log in as User A
+2. Create a listing
+3. Using a proxy like burp, note the calls and look for /api/listing/YOURID/product_bundle
+4. Repeat the call to your /api/listing/YOURID/product_bundle but change the id to 65905 - my unlisted product. You will receive the product details.
 1. In employer mode, create a new job offer
 2. Fill in the required fields
 3. After the creation, the offer will appear as "Pending Approval"
 4. In Burp Proxy, send the last "UpdateVacancyStatus" request to Repeater, modifying "status":"ACTIVE"
+
+
+## report #305056
+this file sharing site which we can upload files and request a link to share it to others 
+the vulnerability here is in if someone send me file we can access another file in the same path 
+1. user send something.png to a friend 
+2. the friend change the (path) parameter in the url to foo
+3.  the url will return file 
+ start with foo like footer or else
+
+## report #501081
+this vulnerability is in bot have permissions that normal user don't have we can add script to the bot to change role of normal user to admin
+
+1. Login Guest user
+2. Determine own users _id from browser traffic
+3. Escalate to bot group
+4. Create malicious script have user id to promote to admin
 5. The arbitrary ad will now show up as "Active", it will have been verified and published. All users will be able to see it.
