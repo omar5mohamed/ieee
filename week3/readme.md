@@ -67,3 +67,11 @@ the attacker can confirm employee account from partner confirmation link in the 
 for some milliseconds, then in another tab visit that email confirmation link from step 5.
 If done correctly you will now have confirmed an email you do not own.
 Visit https://partners.shopify.com/[ID]/managed_stores, add the store, and you now have access.
+
+## report #1861487
+this vuln is in admin approval for jop requests which the user after offering a job the admin need to approve it we can change the statusr to active which we can scam many offers
+1. In employer mode, create a new job offer
+2. Fill in the required fields
+3. After the creation, the offer will appear as "Pending Approval"
+4. In Burp Proxy, send the last "UpdateVacancyStatus" request to Repeater, modifying "status":"ACTIVE"
+5. The arbitrary ad will now show up as "Active", it will have been verified and published. All users will be able to see it.
