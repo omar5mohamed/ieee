@@ -55,3 +55,13 @@ The attacker was able to send a password reset link to an arbitrary email by sen
    {"email_address":["admin@breadcrumb.com","attacker@evil.com"]}
 5. now you have reset password of all emails you send for them 
    
+## report #300305
+Create a store account and invite an employee.
+Accept the employee invite (maybe not necessary I didn't test).
+Login to or create a partner account as the attacker.
+Go to your partner settings page https://partners.shopify.com/[ID]/settings and change your email to something you own.
+Check your email and grab the confirmation link, but don't visit it yet.
+Go back to your partner account and change your email to that of the store employee from step 2, but intercept the request to not let it through yet.
+Now the tricky part. The "change email" takes anywhere from 1,100 - 2,500 ms to load so you need to take that into account. But let the request go through, wait for some milliseconds, then in another tab visit that email confirmation link from step 5.
+If done correctly you will now have confirmed an email you do not own.
+Visit https://partners.shopify.com/[ID]/managed_stores, add the store, and you now have access.
