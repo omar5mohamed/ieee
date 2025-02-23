@@ -56,7 +56,7 @@ The attacker was able to send a password reset link to an arbitrary email by sen
 5. now you have reset password of all emails you send for them 
    
 ## report #300305
-the attacker can confirm employee account from partner confirmation link
+the attacker can confirm employee account from partner confirmation link in the same shop
 1. Create a store account and invite an employee.
 2. Accept the employee invite (maybe not necessary I didn't test).
 3. Login to or create a partner account as the attacker.
