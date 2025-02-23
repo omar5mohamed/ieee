@@ -37,9 +37,10 @@ the change password function is vuln which we can brute force it and change user
 ## Lab: Broken brute-force protection, multiple credentials per request
 the function of log is vulnerable which is accept data as json format which we can add many passwords and it's accept the right password
 
+
 # summary of Authorization Bypass reports from HackerOne
 
-## report 791775
+## report #791775
 this report for account take over by changing email
 1. create account => (hacker@gmail.com)
 2. go to change email and put vicitm email => (victim@gmail.com)
