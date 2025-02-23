@@ -36,3 +36,14 @@ in this lab we need victim token to use it in forget password req which we can a
 the change password function is vuln which we can brute force it and change username parameter to carlos until we found the error code don't tell us that password is not correct like we can put confirmation pasword wrong to wait to get the massage say the confirmation password is worng not the current password
 ## Lab: Broken brute-force protection, multiple credentials per request
 the function of log is vulnerable which is accept data as json format which we can add many passwords and it's accept the right password
+
+# summary of Authorization Bypass reports from HackerOne
+
+## report 791775
+this report for account take over by changing email
+1. create account => (hacker@gmail.com)
+2. go to change email and put vicitm email => (victim@gmail.com)
+3. the confirmation email will send to hacker@gmailcom which is not logical
+4. now you have access to victim account
+   
+   
