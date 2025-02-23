@@ -101,3 +101,7 @@ this vulnerability is in bot have permissions that normal user don't have we can
 3. Escalate to bot group
 4. Create malicious script have user id to promote to admin
 5. The arbitrary ad will now show up as "Active", it will have been verified and published. All users will be able to see it.
+
+
+## report #1448550
+this vulnerability is make user remove user from any group by intercept removing user from his group by chabthe user id and the user in group id by the group and user he want go remove 
