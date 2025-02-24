@@ -108,6 +108,6 @@ this vulnerability is make user remove user from any group by intercept removing
 
 ## report #1424291
 this vulnerability make user have access for private content with change in header and user id and picture id while sending it to endpoint 
-1. An attacker could send a request with Accept: application/json to the endpoint https://fetlife.com/users/{user-id}/pictures/{pic-id}.
+1. An attacker could send a request with Accept: application/json to the endpoint /users/{user-id}/pictures/{pic-id}.
 2. The server would return private content without proper access checks.
 3. The attack required knowing the asset's ID beforehand.
