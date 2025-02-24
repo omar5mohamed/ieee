@@ -114,3 +114,5 @@ this vulnerability make user have access for private content with change in head
 
  ## report #1546726
  A vulnerability in the Payment Status function allows unauthorized access without authentication. Attackers can check the payment status of any transaction by making a direct request, exposing sensitive transaction details.
+
+# summary of Authentication reports from HackerOne
