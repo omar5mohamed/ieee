@@ -111,3 +111,6 @@ this vulnerability make user have access for private content with change in head
 1. An attacker could send a request with Accept: application/json to the endpoint /users/{user-id}/pictures/{pic-id}.
 2. The server would return private content without proper access checks.
 3. The attack required knowing the asset's ID beforehand.
+
+ ## report #1546726
+ A vulnerability in the Payment Status function allows unauthorized access without authentication. Attackers can check the payment status of any transaction by making a direct request, exposing sensitive transaction details.
