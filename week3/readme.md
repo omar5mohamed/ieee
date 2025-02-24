@@ -116,3 +116,23 @@ this vulnerability make user have access for private content with change in head
  A vulnerability in the Payment Status function allows unauthorized access without authentication. Attackers can check the payment status of any transaction by making a direct request, exposing sensitive transaction details.
 
 # summary of Authentication reports from HackerOne
+
+## report #921780
+this vulnerability is on snap chat log out function which when you logout with victim userid the site sent otp code by mistakenly 
+
+1. Normally, when you log out, Snapchat expects your own user_id in the logout request.
+2. The attacker replaces their user_id with the victim’s user_id in the logout request.
+3. Snapchat mistakenly sends back an OTP token (a one-time password token) for the victim's account, thinking the victim is logging in.
+4. The attacker then uses this OTP token to log in as the victim.
+
+## report #770504
+
+this vulnerability is in twitter when you change email or phone number the site asks for password and sent flow_token with status is it true or false and redirect it
+
+1. Go to Settings and Privacy -> Accounts.
+2. Click on Email -> Update email address.
+3. Enter any random password and click 'Next'.
+4. Intercept the request and copy the flow token.
+5. Modify the server's response to indicate a successful authentication.
+6. Forward the modified response to bypass the password screen.
+
