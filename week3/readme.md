@@ -136,3 +136,7 @@ this vulnerability is in twitter when you change email or phone number the site 
 5. Modify the server's response to indicate a successful authentication.
 6. Forward the modified response to bypass the password screen.
 
+## report #1490470
+the attacker can login as admin by signing in with user name admin and password and 
+the res will back with status false
+change it to true and fowrard it back 
