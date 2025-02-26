@@ -161,3 +161,7 @@ It looks like :- /remote.php/dav/calendars/ha.ckitbharat3@gmail.com/app-generate
 the attacker try to login to account with the email he get from the invite
 the attacker can intercept the req and see that username and password is base64 encoded
 we can now brute force many passwords with the email we have and ecode them base 64 untill we found valid password
+
+## report #2414707
+
+this report is about we can access a site which we are not authorized to acces by visit other site then visit it which it gives us a session we can acces this unauthorized site 
