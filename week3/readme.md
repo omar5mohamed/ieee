@@ -150,3 +150,6 @@ this vulnerability make anyone have in his account to 2fa to access any account 
 2. intercept it
 3. add to the req log in header to the request
 4. add valid otp code to the header from attacker account 
+
+## report #970157
+this vulnerability in change password where no limit which we can brute force password list to know the right password if it's easy
