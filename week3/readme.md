@@ -143,3 +143,10 @@ change it to true and fowrard it back
 
 ## report #1709881
 this report is ato the attacker can sign in on any acoount with changing in response value parameter from false to true 
+
+## report #128085
+this vulnerability make anyone have in his account to 2fa to access any account have also 2fa
+1. by creating a request for otp
+2. intercept it
+3. add to the req log in header to the request
+4. add valid otp code to the header from attacker account 
