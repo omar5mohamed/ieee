@@ -153,3 +153,11 @@ this vulnerability make anyone have in his account to 2fa to access any account 
 
 ## report #970157
 this vulnerability in change password where no limit which we can brute force password list to know the right password if it's easy
+
+## report #1879549
+the victim send private group invite to attacker 
+the attacker can see the victim email in invite link 
+It looks like :- /remote.php/dav/calendars/ha.ckitbharat3@gmail.com/app-generated--deck--board-5269/
+the attacker try to login to account with the email he get from the invite
+the attacker can intercept the req and see that username and password is base64 encoded
+we can now brute force many passwords with the email we have and ecode them base 64 untill we found valid password
