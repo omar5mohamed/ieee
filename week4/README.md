@@ -1,4 +1,5 @@
 
 ##  sql-injection labs 
-![image](https://github.com/user-attachments/assets/cdd22311-53ef-464c-a2ca-4e1575aa68fd)
+
+![sql](https://github.com/user-attachments/assets/2a6f7be0-9e42-4dcc-a1f7-c83e7adf9aec)
 
