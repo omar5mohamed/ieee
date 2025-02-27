@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/51c33d60-b91c-43af-b8a1-7e9dcd6f123c)# Lab 12 - Blind SQL injection with conditional errors
+# Lab 12 - Blind SQL injection with conditional errors
 
 since this oracle database we will use different information sechame and operators
 
