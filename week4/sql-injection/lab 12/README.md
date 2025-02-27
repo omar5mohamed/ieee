@@ -1,7 +1,7 @@
 # Lab 12 - Blind SQL injection with conditional errors
  <br>
-since this oracle database we will use different information sechame and operators <br>
- <br>
+since this oracle database we will use different information sechame and operators <br> 
+
 ## 1) Confirm that the parameter is vulnerable to blind SQLi
 by using payload <br>
 ' || (select '' from dual) || '  <br>
