@@ -26,7 +26,7 @@ using payload with burp intruder to bruteforce the length of password
 
 i found password is 20 characters
 
-5) brute force the password
+## 5) brute force the password
 using burp intruder to brute force the characters
 with two payloads one on the character index and one on every character to guess it
 and filter for welcome word
