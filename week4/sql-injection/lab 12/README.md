@@ -3,7 +3,7 @@
 since this oracle database we will use different information sechame and operators
 
 ## 1) Confirm that the parameter is vulnerable to blind SQLi
-by using payload
+by using payload <br>
 ' || (select '' from dual) || '
 the response have no error code which is okay 
 if we try something wrong i see error
