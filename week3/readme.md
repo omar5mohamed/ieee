@@ -165,3 +165,18 @@ we can now brute force many passwords with the email we have and ecode them base
 ## report #2414707
 
 this report is about we can access a site which we are not authorized to acces by visit other site then visit it which it gives us a session we can acces this unauthorized site 
+
+## report #2293343
+this  vulnerability make the attacker can take over any account by email
+1. Go to "Forgot Your Password?" link
+2. Enter the victim's email and intercept the submit request via Burp Suite
+3. Convert to content-type JSON
+4. Now replace this converted JSON line "user[email]":"victim@gmail.com", to
+   "user" {
+     "email" [
+              "victim@gmail.com"
+              "attacker@gmail.com"
+       ]
+ },
+5. Forward the requests and you should get an email containing the reset link that was send to both emails (victim@gmail.com and attacker@gmail.com) .
+6. Click on the reset link, change the password and done, you can now login as the victim using the new password.
