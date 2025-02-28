@@ -32,3 +32,6 @@ The server does not perform sanitization on user input, allowing an attacker to 
 ## report #300176
 this website is vulnerable to SQL injection in two cookies with different techniques.
 1 with time based and the other is basic sql injection
+
+## report #419017
+the site is vulnerable to SQL injection in the maxlength attribute of the SSN input field which we can add sql injection payload in it
