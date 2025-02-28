@@ -35,3 +35,7 @@ this website is vulnerable to SQL injection in two cookies with different techni
 
 ## report #419017
 the site is vulnerable to SQL injection in the maxlength attribute of the SSN input field which we can add sql injection payload in it
+
+## report #838855
+this site have Blind SQL Injection by Abusing LocalParams (res_id) in /php/geto2banner <br>
+ we are able to Exploit it to extract data from your DB
