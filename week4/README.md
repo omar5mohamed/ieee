@@ -28,3 +28,7 @@ you can inject by this payload <br>
 ## report #2051931
 The server does not perform sanitization on user input, allowing an attacker to inject arbitrary SQL commands into a query. <br>
 /api/ten-drives/custom-winners/ten_drive_kz_second_weeks/number_trips/1/999%20or%201=2--
+
+## report #300176
+this website is vulnerable to SQL injection in two cookies with different techniques.
+1 with time based and the other is basic sql injection
