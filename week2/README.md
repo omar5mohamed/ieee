@@ -1,4 +1,4 @@
-you have the files create s server with xammpp and make database her the query for the databas
+## you have the files create s server with xammpp and make database her the query for the databas
 
 ## and the password for everything is password usernames seller and buyer
 
