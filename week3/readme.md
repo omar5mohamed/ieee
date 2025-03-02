@@ -185,3 +185,5 @@ this  vulnerability make the attacker can take over any account by email
 ## report on bookstore
 - there's no rate limit which we can bruteforce on the username and password
 - the error massage show us if username is in database or not which make it easly to brute force
+- we can delete from the request the name and Address and phone when checkout
+- 
