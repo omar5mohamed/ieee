@@ -180,3 +180,6 @@ this  vulnerability make the attacker can take over any account by email
  },
 5. Forward the requests and you should get an email containing the reset link that was send to both emails (victim@gmail.com and attacker@gmail.com) .
 6. Click on the reset link, change the password and done, you can now login as the victim using the new password.
+
+
+## report on bookstore
