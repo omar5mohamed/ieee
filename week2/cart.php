@@ -14,6 +14,8 @@ if (isset($_POST['remove'])) {
     $stmt = $conn->prepare("DELETE FROM cart WHERE buyer_id = ? AND book_id = ?");
     $stmt->bind_param("ii", $buyer_id, $book_id);
     $stmt->execute();
+    header("Location: cart.php");   
+    exit();
 }
 
 if (isset($_POST['checkout'])) {
@@ -29,11 +31,13 @@ if (isset($_POST['checkout'])) {
     $message = "Order placed successfully!";
 }
 
+// Fetch Cart Items
 $sql = "SELECT b.* FROM cart c JOIN books b ON c.book_id = b.id WHERE c.buyer_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $buyer_id);
 $stmt->execute();
 $cart_items = $stmt->get_result();
+$show_checkout = isset($_POST['proceed']);
 ?>
 
 <!DOCTYPE html>
@@ -64,61 +68,107 @@ $cart_items = $stmt->get_result();
     <div class="container">
         <h2>Your Cart</h2>
         <?php if (isset($message)) echo "<p class='green-text'>$message</p>"; ?>
-        <div class="card-panel bookadd">
-            <h5>Checkout Details</h5>
-            <form method="POST">
-                <div class="input-field">
-                    <input type="text" name="name" id="name" required>
-                    <label for="name">Your Name</label>
-                </div>
-                <div class="input-field">
-                    <input type="text" name="address" id="address" required>
-                    <label for="address">Address</label>
-                </div>
-                <div class="input-field">
-                    <input type="number" name="phone" id="phone" required>
-                    <label for="phone">Phone Number</label>
-                </div>
-                <table class="highlight">
-                    <thead>
-                        <tr>
-                            <th>Book Title</th>
-                            <th>Author</th>
-                            <th>Price</th>
-                            <th>Remove</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $total = 0;
-                        while ($item = $cart_items->fetch_assoc()):
-                            $final_price = $item['price'] - $item['discount'];
-                            $total += $final_price;
-                        ?>
+
+        <?php if ($cart_items->num_rows > 0): ?>
+            <?php if (!$show_checkout): ?>
+                <div class="card-panel">
+                    <table class="highlight">
+                        <thead>
                             <tr>
-                                <td><?php echo $item['title']; ?></td>
-                                <td><?php echo $item['author']; ?></td>
-                                <td><?php echo $final_price; ?>$</td>
+                                <th>Book Title</th>
+                                <th>Author</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $total = 0;
+                            while ($item = $cart_items->fetch_assoc()):
+                                $final_price = $item['price'] - $item['discount'];
+                                $total += $final_price;
+                            ?>
+                                <tr>
+                                    <td><?php echo $item['title']; ?></td>
+                                    <td><?php echo $item['author']; ?></td>
+                                    <td><?php echo $final_price; ?>$</td>
+                                    <td>
+                                        <form method="POST" style="display:inline;">
+                                            <input type="hidden" name="book_id" value="<?php echo $item['id']; ?>">
+                                            <button type="submit" name="remove" class="btn red">Remove</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td id="finalcost"><?php echo $total; ?>$</td>
                                 <td>
-                                    <form method="POST" style="display:inline;">
-                                        <input type="hidden" name="book_id" value="<?php echo $item['id']; ?>">
-                                        <button type="submit" name="remove" class="btn red">Remove</button>
+                                    <form method="POST">
+                                        <button type="submit" name="proceed" class="btn indigo accent-3">Proceed to Checkout</button>
                                     </form>
                                 </td>
                             </tr>
-                        <?php endwhile; ?>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td id="finalcost"><?php echo $total; ?>$</td>
-                            <td><button type="submit" name="checkout" class="btn green">Checkout</button></td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </form>
-        </div>
+                        </tfoot>
+                    </table>
+                </div>
+            <?php else: ?>
+                <div class="card-panel bookadd">
+                    <h5>Checkout Details</h5>
+                    <form method="POST">
+                        <div class="input-field">
+                            <input type="text" name="name" id="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="address" id="address" required>
+                            <label for="address">Address</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="number" name="phone" id="phone" required>
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        <table class="highlight">
+                            <thead>
+                                <tr>
+                                    <th>Book Title</th>
+                                    <th>Author</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $cart_items->data_seek(0); 
+                                $total = 0;
+                                while ($item = $cart_items->fetch_assoc()):
+                                    $final_price = $item['price'] - $item['discount'];
+                                    $total += $final_price;
+                                ?>
+                                    <tr>
+                                        <td><?php echo $item['title']; ?></td>
+                                        <td><?php echo $item['author']; ?></td>
+                                        <td><?php echo $final_price; ?>$</td>
+                                    </tr>
+                                <?php endwhile; ?>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td id="finalcost"><?php echo $total; ?>$</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <button type="submit" name="checkout" class="btn green">Confirm Order</button>
+                    </form>
+                </div>
+            <?php endif; ?>
+        <?php else: ?>
+            <p>Your cart is empty.</p>
+        <?php endif; ?>
     </div>
 
     <footer class="footer">
